@@ -1,0 +1,10 @@
+tree = BST.insert(nil, 5)
+tree = BST.insert(tree, 1)
+tree = BST.insert(tree, 2)
+tree = BST.insert(tree, 8)
+tree = BST.insert(tree, 10)
+tree = BST.insert(tree, 4)
+tree = BST.insert(tree, 0)
+tree = BST.insert(tree, 6)
+tree = BST.insert(tree, 3)
+BST.bfs tree
