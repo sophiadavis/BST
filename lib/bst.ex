@@ -85,7 +85,8 @@ defmodule BST do
     Create a list of all elements in tree, traversing nodes pre-order.
   """
   def preorder tree do
-    preorder tree, []
+    total = preorder tree, []
+    Enum.reverse(total)
   end 
   
   defp preorder nil, accum do
@@ -93,7 +94,7 @@ defmodule BST do
   end
   
   defp preorder tree, accum do
-    middle = accum ++ [tree[:value]]
+    middle = [tree[:value]|accum]# accum ++ [tree[:value]]
     left_side = preorder tree[:ltree], middle
     preorder tree[:rtree], left_side
   end
