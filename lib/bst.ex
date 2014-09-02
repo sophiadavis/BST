@@ -124,21 +124,21 @@ defmodule BST do
   end
   
   defp bfs(queue, acc) when length(queue) > 0 do
-    current = List.first(queue)    
-    queue = List.delete_at(queue, 0)
+    current = List.last(queue)    
+    queue = List.delete(queue, current)
         
-    if current[:ltree] != nil do
+    if current[:ltree] do
       acc = [current[:ltree][:value]|acc]
-      queue = queue ++ [current[:ltree]]
+      queue = [current[:ltree]|queue]
     end
-    if current[:rtree] != nil do
+    if current[:rtree] do
       acc = [current[:rtree][:value]|acc]
-      queue = queue ++ [current[:rtree]]
+      queue = [current[:rtree]|queue]
     end
     bfs queue, acc
   end
   
-  defp bfs queue, acc do
+  defp bfs _, acc do
     Enum.reverse acc
   end
 end

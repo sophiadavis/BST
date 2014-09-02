@@ -14,6 +14,18 @@ defmodule BSTTest do
     assert BST.inorder(basic_tree) == [1, 2, 3, 5, 7]
   end
   
+  test "pre order" do
+    assert BST.preorder(basic_tree) == [3, 1, 2, 5, 7]
+  end
+  
+  test "post order" do
+    assert BST.postorder(basic_tree) == [2, 1, 7, 5, 3]
+  end
+  
+  test "bfs" do
+    assert BST.bfs(basic_tree) == [3, 1, 5, 2, 7]
+  end
+  
   test "it removes leaves" do
     assert BST.inorder(BST.remove(basic_tree, 2)) == [1, 3, 5, 7]
   end
