@@ -7,4 +7,4 @@ tree = BST.insert(tree, 4)
 tree = BST.insert(tree, 0)
 tree = BST.insert(tree, 6)
 tree = BST.insert(tree, 3)
-BST.bfs tree
+array = BST.bfs tree
